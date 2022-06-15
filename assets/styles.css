@@ -1,0 +1,100 @@
+
+/* Header Cover */
+#header{
+    background-image: url('https://i.pinimg.com/originals/0b/59/34/0b5934b623f3c6f5377f221959d77982.gif');
+    background-size: cover;
+    background-position-y: 40%;
+    color:white;
+    background-color:rgb(0, 0, 0);
+    position:relative !important;
+}
+
+/* style for city name in Header Cover */
+#header h1{
+    font-size: 400%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Jumbotron positioning */
+.jumbotron {
+    padding: 1rem;
+    border-radius: 0;
+}
+
+/* city search size */
+#search-city{
+    width:80%;
+}
+
+/* fontawesome magnifying glass */
+#search-button-icon{
+    width:15px;
+    display:inline-block;
+}
+
+
+/*Current weather padding */
+#current-weather {
+    padding-left: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* clear storage  */
+#clear-storage{
+    color:rgb(103, 3, 112);
+    text-decoration: none;
+    font-size:1em;
+    margin: .5em 0em 0em .5em;
+}
+
+/* Weather card styling */
+.weather-card{
+    width: 9rem;
+    background-color: #070227;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* UV coloring depending on condition */
+.uv-favorable{
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+}
+
+.uv-moderate{
+    background-color: orange;
+    border-radius: 5px;
+    color: white;
+}
+
+.uv-severe{
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+
+
+/* Media queries */
+@media only screen and (max-width: 992px) {
+    #search-city{
+        width:100%;
+    }
+    #search-button{
+        width:100%;
+    }
+}
+@media only screen and (max-width: 575px) {
+
+    #fiveDayForecastUl{
+        justify-content: center;
+    }
+}
