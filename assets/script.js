@@ -49,7 +49,6 @@ var getCurrentConditions = (event) => {
                 <li>Humidity: ${response.main.humidity}%</li>
                 <li>Wind Speed: ${response.wind.speed} mph</li>
                 <li>Pressure: ${response.main.pressure} hPa </li>
-                <li>UVIndex: ${response.uvIndex}  </li>
                 <li id="uvIndex">UV Index:</li>
             </ul>`;
             // Append the results to the DOM
@@ -59,7 +58,7 @@ var getCurrentConditions = (event) => {
             let longitude = response.coord.lon;
             let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owAPI;
             // API solution for Cross-origin resource sharing (CORS) error: https://cors-anywhere.herokuapp.com/
-            uvQueryURL = "https://cors-anywhere.herokuapp.com/" + uvQueryURL;
+            uvQueryURL = "/" + uvQueryURL;
             // Fetch the UV information and build the color display for the UV index
             fetch(uvQueryURL)
                 .then(handleErrors)
