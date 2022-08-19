@@ -49,7 +49,7 @@ var getCurrentConditions = (event) => {
                 <li>Humidity: ${response.main.humidity}%</li>
                 <li>Wind Speed: ${response.wind.speed} mph</li>
                 <li>Pressure: ${response.main.pressure} hPa </li>
-               
+                <li>UVIndex: ${response.uvIndex}  </li>
                 <li id="uvIndex">UV Index:</li>
             </ul>`;
             // Append the results to the DOM
