@@ -11,3 +11,9 @@ https://surfinsofia.github.io/WeatherDashboard/
 
 
 ![screenshot](./assets/screenshot.png)
+
+To do:
+<br>
+Add UV Index by getting latitude and latitude
+<br>
+Button to change to Celsius

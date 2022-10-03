@@ -49,33 +49,38 @@ var getCurrentConditions = (event) => {
                 <li>Humidity: ${response.main.humidity}%</li>
                 <li>Wind Speed: ${response.wind.speed} mph</li>
                 <li>Pressure: ${response.main.pressure} hPa </li>
-                <li id="uvIndex">UV Index:</li>
+             
             </ul>`;
+
+            //   <li id="uvIndex">UV Index:</li> above for UV li element
+
             // Append the results to the DOM
             $('#current-weather').html(currentWeatherHTML);
-            // Get the latitude and longitude for the UV search from Open Weather Maps API
-            let latitude = response.coord.lat;
-            let longitude = response.coord.lon;
-            let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owAPI;
-            // API solution for Cross-origin resource sharing (CORS) error: https://cors-anywhere.herokuapp.com/
-            uvQueryURL = "/" + uvQueryURL;
-            // Fetch the UV information and build the color display for the UV index
-            fetch(uvQueryURL)
-                .then(handleErrors)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((response) => {
-                    let uvIndex = response.value;
-                    $('#uvIndex').html(`UV Index: <span id="uvVal"> ${uvIndex}</span>`);
-                    if (uvIndex >= 0 && uvIndex < 3) {
-                        $('#uvVal').attr("class", "uv-favorable");
-                    } else if (uvIndex >= 3 && uvIndex < 8) {
-                        $('#uvVal').attr("class", "uv-moderate");
-                    } else if (uvIndex >= 8) {
-                        $('#uvVal').attr("class", "uv-severe");
-                    }
-                });
+
+            // //comment out uv since not working...
+            // // Get the latitude and longitude for the UV search from Open Weather Maps API
+            // let latitude = response.coord.lat;
+            // let longitude = response.coord.lon;
+            // let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + owAPI;
+            // // API solution for Cross-origin resource sharing (CORS) error: https://cors-anywhere.herokuapp.com/
+            // uvQueryURL = "/" + uvQueryURL;
+            // // Fetch the UV information and build the color display for the UV index
+            // fetch(uvQueryURL)
+            //     .then(handleErrors)
+            //     .then((response) => {
+            //         return response.json();
+            //     })
+            //     .then((response) => {
+            //         let uvIndex = response.value;
+            //         $('#uvIndex').html(`UV Index: <span id="uvVal"> ${uvIndex}</span>`);
+            //         if (uvIndex >= 0 && uvIndex < 3) {
+            //             $('#uvVal').attr("class", "uv-favorable");
+            //         } else if (uvIndex >= 3 && uvIndex < 8) {
+            //             $('#uvVal').attr("class", "uv-moderate");
+            //         } else if (uvIndex >= 8) {
+            //             $('#uvVal').attr("class", "uv-severe");
+            //         }
+            //     });
         })
 }
 
@@ -119,9 +124,12 @@ var getFiveDayForecast = (event) => {
                         <br>
                         <li>Pressure: ${dayData.main.pressure} hPa</li>
                        <br>
-                       <li>UV Index: ${dayData.main.uv}</li>
+                     
                     </ul>
                 </div>`;
+
+//  <li>UV Index: ${dayData.main.uv}</li> use this above for li element for uv...not working currently
+
                 }
             }
             // Build the HTML template
