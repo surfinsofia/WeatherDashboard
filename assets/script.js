@@ -52,6 +52,7 @@ var getCurrentConditions = (event) => {
              
             </ul>`;
 
+            //comment out below uv
             //   <li id="uvIndex">UV Index:</li> above for UV li element
 
             // Append the results to the DOM
@@ -127,6 +128,7 @@ var getFiveDayForecast = (event) => {
                      
                     </ul>
                 </div>`;
+
 
 //  <li>UV Index: ${dayData.main.uv}</li> use this above for li element for uv...not working currently
 
